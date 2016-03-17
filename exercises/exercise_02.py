@@ -253,22 +253,23 @@ class Project():
 
                 outcome = self.battle(first_team_inhabitant,
                                       second_team_inhabitant)
+                # print outcome
+
                 # team_one_selected_member won
-                print outcome
                 if outcome == Outcome.WIN:
                     first_team_selected.remove(first_team_inhabitant)
-                    print "Removed team one"
+                    # print "Removed team one"
                 # team_two_selected_member won
                 elif outcome == Outcome.LOSE:
                     second_team_selected.remove(second_team_inhabitant)
-                    print "Removed team two"
+                    # print "Removed team two"
 
                 # do nothing
                 else:
                     # Yo dawg I heard it was a draw, that's aight
                     # try again next time
-                    print "Draw"
-                    # pass
+                    # print "Draw"
+                    pass
 
             # Exit condition - A team has won when the other teams are defeated
             empty_count = 0
@@ -297,8 +298,8 @@ class Project():
         print "#" * 30
         print "# Results"
         print "#" * 30
-        print "Winners: {}".format(winners)
-        print "Losers:  {}".format(losers)
+        print "Winning Team: {}".format(winners)
+        print "Losing Team(s):  {}".format(losers)
 
     def battle(self, inhabitant_one, inhabitant_two):
         weapon_tuple = (inhabitant_one.get_weapon(),
