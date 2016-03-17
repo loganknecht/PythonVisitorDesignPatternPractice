@@ -1,18 +1,14 @@
 class Inhabitant(object):
 
     def greet(self, inhabitant):
-        print "Hello there {}! I'm a {}".format(str(inhabitant), str(self))
+        print "Hello there {}! I'm a {}".format(inhabitant.get_race(), self.get_race())
 
     # Basically the visit dispatch function
     def interact(self, inhabitant):
         error_output = "Bruh this method doesn't exist for the base class."
         raise NotImplementedError(error_output)
 
-    def get_weapon(self, inhabitant):
-        error_output = "Bruh this method doesn't exist for the base class."
-        raise NotImplementedError(error_output)
-
-    def __str__(self):
+    def get_race(self):
         return self.__class__.__name__
 
 
@@ -85,12 +81,6 @@ class Troll(Inhabitant):
 class Project():
 
     def __init__(self):
-        pass
-
-    def meeting(self):
-        pass
-
-    def battle(self):
         pass
 
     def perform_interactions(self):
